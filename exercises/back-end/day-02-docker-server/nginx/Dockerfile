@@ -23,3 +23,6 @@ COPY welcome.html /usr/share/nginx/html
 # 'docker run -d -p 3000:80 laura/hello-nginx' -p para definir a porta que vai ser usada. Primeiro, a porta que rodará no navegador, à esquerda, a porta do container(80-nginx. 3000-react)
 # para entrar no container, usar o comando: 'docker exec -it id bash'
 # 'curl localhost' para ver o conteudo do index.html (pq index é padrão) que vc criou. 'curl localhost/nome-do-arquivo.html 'para ver conteudo do outro arquivo que não seja index
+# obs.: alpine é uma versão mais compacta, leve.
+
+
