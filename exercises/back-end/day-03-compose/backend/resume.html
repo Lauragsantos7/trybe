@@ -1,0 +1,63 @@
+<!-- # compose serve para subir e derrubar  vários containers de uma vez só. Faz com que um container fique visível para os outros.
+# ------- REDES -------
+# criar os containers 'container1 e container2'
+# ping : envia pacote e vê se há perda de pacotes, tempo de resposta, etc. no terminal : ping www.google.com
+# criando uma rede: no terminal:  docker network create -d bridge laura-network ('-d bridge': tipo de rede a ser utilizada)
+# para listar as redes: docker network ls
+# para conectar os containers: 
+# docker network connect laura-network container1 (quero conectar o container1 na rede laura-network)
+# verificando os containers conectados: docker network inspect laura-network ou docker network inspect laura-network | jq '.[].Containers'
+# conectando o container2:  docker network connect laura-network container2
+# retirar o container da rede: docker network disconnect laura-network container1
+# criar um container já conectado a uma rede: docker run -itd --name container3 --network laura-network busy
+
+# -------VOLUMES ---------
+# armazenar seus containers para não perder informações
+# criando um container com volume: docker run -v "laura" -d nginx (-d deatch )
+# iniciar o volume: -v
+# caso seja necessário armazenar um volume em uma pasta fora do docker Host: docker run -it -v "/caminho:/nome-d-volume" ubuntu(imagem -->
+
+
+
+<!-- / Docker
+// O que é? Ferramenta para resolver problemas de compatibilidade
+// entre máquinas e versões de framewares usados numa app.
+
+// Isola a app para que ela rode em SO distintos.
+
+// Conteinirização: empacotamento das configurações necessárias, inclusive SO.
+
+// Imagem: é a app empacotada com todas as dependências necessárias já instaladas
+// dentro dela. Dockerfile ajuda a criar imagens.
+
+// Container: processo que representa a execução da imagem já construída. É
+// possível entrar no terminal dentro do container, assim como parar e continuar
+// sua execução sem precisar recriá-lo.
+
+// registry:
+// local remoto onde podemos enviar e baixar imagens docker. É possível criar novas
+// imagens usando oitras imagens do catalógo como base. 
+
+// https://hub.docker.com/
+
+// Principais comandos: 
+
+// docker images: lista as imagens salvas na máquina;
+// docer container ls ou docker ps: lista os containers em execução na máquina;
+// docker container ls -a: mostra todos os containers da máquina, ainda que
+// paraddos ou que já terminaram sua execução
+// criar container: docher container run --name meu-container alpine:3.14 echo"Hello World"
+// criou container baseado na imagem alpine, com o nome de "meu-container",usando a tag 3.14
+// e passando os argumentos echo e Hello World.
+// docker rm <nome-do-container> para remover o container se ele estiver parado ou sua execução
+// tiver terminado.
+// auto-remover: docker container run --rm alpine..... 
+// o container vai ser removido ao final de sua execução.
+// segundo plano: -d ou –detach : faz com a execução do container aconteça em segundo plano.  
+// ...alpine:3.14 sleep 300 o container continuará em execução por 300 segundos.
+// docker stop -t 0 <nome-do-container> força (-t 0) a parada de execução do container que tá 
+// rodando em segudo plano      
+// docker exec -it meu-container sh : entendendo o comando: flag t: solicita criação de uma sessão
+// de terminal; flag i : necessária para que a sessão seja iterativa; sh: comando a ser executado,
+// que é um programa de terminal linux.
+// 	ps aux : lsita todos os processos em execução no momento -->

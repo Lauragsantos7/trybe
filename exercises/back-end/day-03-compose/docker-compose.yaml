@@ -1,0 +1,22 @@
+#------ DOCKER COMPOSE --------------
+# ferramenta de orquestração em aruivo yaml (iámel)
+# cada serviço é um container diferente e o compose orquestra todos
+# começar pela versão:
+version: '3'
+
+# pode definir os volumes aqui ou dentro do próprio container
+# todos os containers criados aqui, por default já estão na mesma rede
+
+services: 
+  web:  # nome do serviço e não do container
+    image: nginx:latest # imagem do dockerhub
+    container_name: xablau
+    volumes:
+      - ./public_html:/usr/share/nginx-html # na raiz da pasta atual, há um diretṕrio que se chama public_html. Tudo que tiver dentro desse diretório, vai ser builndado (criado) dentro do contanier no diretório usr/share/nginx/html ( vai substituir o que tá la dentro )
+    ports:
+      - 8080:80
+
+# executar o docker compose: no diretório que ele se encontra: docker-compose up -d -- build 
+
+
+
