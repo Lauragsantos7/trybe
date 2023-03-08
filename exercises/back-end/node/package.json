@@ -1,0 +1,29 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "introducao a node/npm",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lauragsantos7/trybe.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "testing"
+  ],
+  "author": "laura santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lauragsantos7/trybe/issues"
+  },
+  "homepage": "https://github.com/Lauragsantos7/trybe#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.9",
+    "readline-sync": "^1.4.10"
+  }
+}
