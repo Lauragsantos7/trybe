@@ -1,5 +1,6 @@
 const askName = require('./askName');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
+
 
 const name = askName();
 console.log(`Buscando biblioteca ${name}...`)
@@ -16,6 +17,8 @@ const getPackage = async () => {
     console.log(err.message)
 }
 }; getPackage();
+
+
 
 // importar função de outra pag: const nome-da-const = require(./pagina);
 
