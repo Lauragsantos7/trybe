@@ -1,0 +1,16 @@
+version: '3'
+services:
+  # node:
+  #   ports:
+    
+  #     - 3001:3001
+
+  database:
+    container_name: books_api_db
+    image: mysql:8.0.29
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: books_api
+    ports:
+      - "3306:3306"
