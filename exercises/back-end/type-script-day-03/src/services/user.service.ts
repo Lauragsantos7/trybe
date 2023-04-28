@@ -17,7 +17,7 @@ async function login(username:string, password: string): Promise<string> {
 async function getAllUsers(): Promise<User[]> {
 const users = await userModel.getAllUsers();
 if (!users) {
-    throw new Error('Not has users')
+    throw new Error('No has users')
 }
 return users;
 };
