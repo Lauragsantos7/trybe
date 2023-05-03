@@ -1,7 +1,8 @@
+import { IEfetivavel } from "../Interfaces/Efetivavel";
 import { Pagamento, PagamentoParams } from "./Pagamento"
 import crypto from 'node:crypto'
 
-export class PagamentoBoleto extends Pagamento {
+export class PagamentoBoleto extends Pagamento implements IEfetivavel {
     private _dataVencimento : Date;
     constructor(_dataVencimento: Date, params: PagamentoParams) {
         super(params); 
