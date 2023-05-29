@@ -12,3 +12,12 @@ Esse ambiente será visto como um diretório na raiz do projeto. O ponto na fren
   source .venv/bin/activate
 # conferir se deu certo:
   which python3
+
+
+  # testes:
+instalação da biblioteca pytest:
+  python3 -m pip install pytest
+Verificar:  python3 -m pytest --version
+
+O nome do arquivo deve ter o prefixo test_ assim como a definição das sua funções. A palavra assert é utilizada para verificar se o rtorno está como o esperado. 
+O comando assert funciona da seguinte maneira: caso a expressão recebida seja verdadeira (avaliada como True), nada acontece. Porém, caso seja falsa (avaliada como False), uma exceção do tipo AssertionError é lançada. A pytest captura este erro e tenta apresentar uma comparação entre o esperado e o recebido da melhor maneira possível.
