@@ -1,0 +1,40 @@
+use("class")
+// para rodar, selecionar e clicar na lâmpada que aparece e rodar o código
+// selecionar todas as queries que deseja rodar sempre, pq não fica salvo no playground ao lado
+
+
+// ctrl alt r para rodar todas as queries no playground
+
+show('collections')
+
+// procurar itens com especiifcação:
+
+// itens com tamanho 10 (h é uma chave que está dentro da chave size)
+db.inventory.find({ "size.h": 10})
+
+// pesquisar itens com 2 filtros: só utilizar a vírgula entre os critérios
+d.inventory.find({
+  item: "paper",
+  status: "D"
+})
+
+// Relacionamentos:
+//  são feitos na mesma coleçao, através de documentos embutidos: um doc dentro do outro. Não tem como aproveitar dados de outra coleção. Por exemplo, se duas pessoas tiverem o mesmo endereçi, tem que cadastrar duas vezes, pq não dá pra aproveitar o endereço já cadastrado anteriormente
+// 1: 1
+use("class")
+db.users.insertOne({
+  _id: 'joe',
+  name: 'joe bookreader',
+  adress: {
+    street: 'rua do amor',
+    city: 'paixao',
+    state: 'lovely',
+    zip: '12345'
+  }
+})
+
+// 1: N cada usuário com vários endereços: os dados tbm são consolidados dentro do mesmo elemento e ADDRESS seria um array de endereços
+
+
+
+

@@ -1,0 +1,30 @@
+version: '3'
+services:
+  front-end:
+    build: front-end/
+    container_name: jordan_front_end
+    working_dir: /app
+    volumes:
+      - ./front-end:/app 
+    #  lado esquerdo: pc. direito: container
+
+    stdin_open: true
+    # vai trabalhar dentro do container e dentro da máquina.
+    tty: true
+    command: sh
+    ports:
+      - 5000:3000
+    # 3000 porta padrão do react. 5000 é o meu localhost
+
+    restart: on-failure
+     # só vai restartar qdo o container falhar 
+  data-base:
+    image: mysql:8.0
+    container_name: jordan_data_base
+    volumes:
+      - ./data-base:/var/lib/mysql
+    ports:
+      - 33060:3306
+    restart: on-failure
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
