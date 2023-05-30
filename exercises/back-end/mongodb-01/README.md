@@ -80,7 +80,7 @@ $ne: Especifica uma condição de não igualdade (not equal). O operador $ne rea
 
 $gt: Especifica uma condição de maior que (greater than). O operador $gt realiza a correspondência de documentos em que o valor de uma chave maior que o valor especificado.
 
-{<chave> { $gt: <valor> }}
+**db.places.find({price:  { $gt: 100 }}, {price: true})** pesquisa os imóveis com preço acima de 100 e retorna esse preço
 
 
 $gte: Especifica uma condição de maior ou igual (greater than or equal). O operador $gte realiza a correspondência de documentos em que o valor de uma chave maior ou igual ao valor especificado.
@@ -95,4 +95,15 @@ $lte: Especifica uma condição de menor ou igual (less than or equal). O operad
 
 {<chave> { $lte: <valor> }}
 
+- **Inserindo dados**
+Dois métodos: insertOne() e insertMany()
 
+Toda e qualquer manipulação de dados no MongoDB se dá através de documentos, ou seja, na inserção serão inseridos documentos assim como em uma consulta recuperamos documentos.
+
+BDs NoSQL não possuem schemas, ou seja, não pussem uma estrutura rígida que deve ser seguida durante a inserção ou uma atualização de dos. Logo, os docs não precisam ter as mesmas chaves, pode ter chaves a menos, a mais ou com nomes distintos
+
+db.places.insertOne({_id: 100, name: "Casa na Lua", description: "Uma vista única da terra"})
+
+insertMany([{}]) deve ser um array pq são vários docs.
+
+Terminei parte 01 da aula 53 - vida real. Falta aula o vivo e exercicios. 
