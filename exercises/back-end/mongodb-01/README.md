@@ -68,6 +68,7 @@ db.places.find().sort({'_id': 1})
  e -1 para ordenação decrescente
 
 - **3 - Operadores de comparação**
+
 $eq: Específica uma condição de igualdade (equal). O operador $eq realiza a correspondência de documentos em que o valor de uma chave é igual ao valor especificado.
 
 {<chave> { $eq: <valor> }}
@@ -107,3 +108,18 @@ db.places.insertOne({_id: 100, name: "Casa na Lua", description: "Uma vista úni
 insertMany([{}]) deve ser um array pq são vários docs.
 
 Terminei parte 01 da aula 53 - vida real. Falta aula o vivo e exercicios. 
+
+
+**Aula ao vivo - turma 25 B - Isaac**
+
+**iniciar um banco de dados:** 
+use nomeDoBanco - se não tiver o banco, ele ja cria automaticamente (criei o banco class)
+
+**criar uma coleção(tabela):** 
+bd.nome-da-coleção.insertOne (criei coleção inventory)
+
+db.inventory.find().pretty() (retorna mais legível, indentado)
+
+**mongo no VSCODE**
+
+abrir a extensão, conectar na porta que configurou no docker e fazer o arquivo para manipulação do DB, que no caso é o 'queries.mongodb'
