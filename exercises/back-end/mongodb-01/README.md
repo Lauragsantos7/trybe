@@ -21,10 +21,10 @@ db.places.find()
 
 - **2 - Recuperando Dados** 
 
-   para acessar o banco de dados:
+para acessar o banco de dados:
 use trybnb
 
-  Para pesquisar todos os docs cadastrados na coleçao:
+Para pesquisar todos os docs cadastrados na coleçao:
 db.places.find()
 
 Realizar contagem de documentos:
@@ -66,4 +66,33 @@ por padrão, os docs não sao rtornados na ordem do atributo _id, caso deseje es
 
 db.places.find().sort({'_id': 1})
  e -1 para ordenação decrescente
+
+- **3 - Operadores de comparação**
+$eq: Específica uma condição de igualdade (equal). O operador $eq realiza a correspondência de documentos em que o valor de uma chave é igual ao valor especificado.
+
+{<chave> { $eq: <valor> }}
+
+
+$ne: Especifica uma condição de não igualdade (not equal). O operador $ne realiza a correspondência de documentos em que o valor de uma chave não é igual ao valor especificado.
+
+{<chave> { $ne: <valor> }}
+
+
+$gt: Especifica uma condição de maior que (greater than). O operador $gt realiza a correspondência de documentos em que o valor de uma chave maior que o valor especificado.
+
+{<chave> { $gt: <valor> }}
+
+
+$gte: Especifica uma condição de maior ou igual (greater than or equal). O operador $gte realiza a correspondência de documentos em que o valor de uma chave maior ou igual ao valor especificado.
+{<chave> { $gte: <valor> }}
+
+
+$le: Especifica uma condição de menor que (less than). O operador $le realiza a correspondência de documentos em que o valor de uma chave menor que o valor especificado.
+{<chave> { $le: <valor> }}
+
+
+$lte: Especifica uma condição de menor ou igual (less than or equal). O operador $gte realiza a correspondência de documentos em que o valor de uma chave menor ou igual ao valor especificado.
+
+{<chave> { $lte: <valor> }}
+
 
