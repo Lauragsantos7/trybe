@@ -1,0 +1,25 @@
+// Faça uma query que traga quantos registros existem cadastrados na base trybnb;
+
+use('trybnb')
+db.places.countDocuments()
+// Faça uma query que traga hospedagens que não estão no Brasil;
+use('trybnb')
+db.places.find({'address.country_code': { $not: /BR/}})
+// Faça uma query que traga hospedagens que tenha cancellation_policy flexible e ordene o resultado pelo valor mais barato;
+use('trybnb')
+db.places.find({'cancellation_policy': "flexible"}).sort({"price": 1})
+// Cadastre sua casa na base trybnb;
+use('trybnb')
+db.places.insertOne({
+  name: "Casa da Laura", 
+  price: 1000,
+  host_name: 'Laura',
+  address: {
+    street: "aqui mesmo nessa rua",
+    country: "Brazil",
+    country_code: 'BR'
+  }
+})
+// conferindo se inseriu corretamente o/
+use('trybnb')
+db.places.find({'price': 1000})
