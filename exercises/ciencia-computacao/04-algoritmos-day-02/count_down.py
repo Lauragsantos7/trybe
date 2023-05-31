@@ -20,8 +20,7 @@ def sum(count):
         return 0
     # não pode ter string no retorno que dá erro 
     else:
-        print(count)
         return count + sum(count -1)
 
-sum(4)
+print(sum(5))
 

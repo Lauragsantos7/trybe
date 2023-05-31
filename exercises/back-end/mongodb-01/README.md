@@ -123,3 +123,5 @@ db.inventory.find().pretty() (retorna mais legível, indentado)
 **mongo no VSCODE**
 
 abrir a extensão, conectar na porta que configurou no docker e fazer o arquivo para manipulação do DB, que no caso é o 'queries.mongodb'
+
+acabei aula ao vivo
