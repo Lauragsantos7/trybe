@@ -23,3 +23,25 @@ db.places.insertOne({
 // conferindo se inseriu corretamente o/
 use('trybnb')
 db.places.find({'price': 1000})
+
+// listar hospedagens em que 'country' seja 'Brazil' e que tenha 'price' menor de $100.00
+use('trybnb')
+db.places.find({
+  $and: [
+    { 'address.country': 'Brazil' },
+    {'price': { $lt: 100 }}
+  ]
+})
+
+// listar hospedagens que tenha número de 'bedrooms' menor  ou igual 2 ou preço menor ou igual a 75 e esteja no Brasil
+use('trybnb')
+db.places.find({
+  $or: [
+    {'debrooms': { $lte: 2}},
+    {'price': {$lte: 75}},
+  ],
+  $and: [
+    {'address.country': 'Brazil'}
+  ]
+})
+
