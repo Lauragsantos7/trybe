@@ -30,6 +30,7 @@ pytest --doctest-modules -vv
 
 Configurando VS code:
 
+
 abrir seu arquivo de configurações por meio do atalho F1 e digitar no campo que aparece: “Preferences: Open User Settings (JSON)
 
 { // Chave de abertura das configurações. Apague caso vá copiar para um arquivo existente
