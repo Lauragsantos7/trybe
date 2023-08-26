@@ -1,0 +1,48 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Module",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "justMyCode": true
+      // ára habilitar debugger em libs externas: alterar para false
+
+      // "autoReload": {
+      //     "enable": true }
+
+      // variáveis de ambiente: 
+      // "env": {
+     //      "DEBUG_MODE": "true" }
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
+
+
+// configura o debugger no testador do VS code:
+// {
+//   // outras configurações
+//   {
+//       "name": "Python: debugando meus testes", 
+//       "type": "python",
+//       "request": "launch",
+//       "purpose": [
+//           "debug-test"
+//       ],
+//       "console": "integratedTerminal",
+//       "justMyCode": false,
+//   },
+//   // outras configurações
+// }

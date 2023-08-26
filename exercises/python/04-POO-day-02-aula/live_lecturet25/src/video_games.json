@@ -1,0 +1,26 @@
+[
+  {
+    "title": "CS",
+    "release_year": 2009,
+    "metrics": {
+      "sales": 222000,
+      "review score": 78
+    }
+  },
+  {
+    "title": "PUBG",
+    "release_year": 2020,
+    "metrics": {
+      "sales": 1000000,
+      "review score": 90
+    }
+  },
+  {
+    "title": "Tíbia",
+    "release_year": 2002,
+    "metrics": {
+      "sales": 555000,
+      "review score": 85
+    }
+  }
+]

@@ -1,0 +1,2 @@
+use('trybnb')
+db.places.find()

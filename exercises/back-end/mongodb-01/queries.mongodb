@@ -21,20 +21,40 @@ d.inventory.find({
 // Relacionamentos:
 //  são feitos na mesma coleçao, através de documentos embutidos: um doc dentro do outro. Não tem como aproveitar dados de outra coleção. Por exemplo, se duas pessoas tiverem o mesmo endereçi, tem que cadastrar duas vezes, pq não dá pra aproveitar o endereço já cadastrado anteriormente
 // 1: 1
-use("class")
-db.users.insertOne({
-  _id: 'joe',
-  name: 'joe bookreader',
+use("trybnb")
+db.places.insertOne({
+  _id: 100,
+  name: 'joe streets',
   adress: {
     street: 'rua do amor',
     city: 'paixao',
-    state: 'lovely',
-    zip: '12345'
-  }
+    country: "Brazil",
+  },
+  price: 500
 })
 
 // 1: N cada usuário com vários endereços: os dados tbm são consolidados dentro do mesmo elemento e ADDRESS seria um array de endereços
 
 
 
+use ("trybnb")
+db.places.find({
+  house_rules: {$regex: "Pro"}},
+  // retorna os docs em que house_rules tenham um trecho que possua os caracteres 'Pro', independente da palavra a que fazem parte
+  { house_rules: true }
+)
+
+
+use ("trybnb")
+db.places.find({ cancellation_policy: { $exists: false } })
+// retorna os docs em que não existe a coluna cancellation_pollicy
+
+
+
+// altera os valores de nome e street no doc de id numero 100:
+use ("trybnb")
+db.places.updateOne(
+  {_id: 100},
+  {$set: {name: "Nova casa da Laura", street: "Aqui mesmo"}
+})
 
