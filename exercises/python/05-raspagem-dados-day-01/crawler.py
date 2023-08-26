@@ -88,3 +88,4 @@ while next_page_url:
         print(description)
     # Descobre qual é a próxima página
     next_page_url = selector.css(".next a::attr(href)").get()
+
