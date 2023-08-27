@@ -9,4 +9,4 @@ def sum_digits(number):                 # linha 4
 
 
 rand_num = randint(10000, 99999)        # linha 11
-print(sum_digits(rand_num))             # linha 12
+print(sum_digits(rand_num))             
