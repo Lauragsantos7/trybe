@@ -4,14 +4,14 @@ from playlists.models import Music
 # python3 manage.py runserver
 
 from django.shortcuts import render
-from playlists.forms import CreateMusicForm
+from playlists.forms import CreateMusicModelForm
 
 
 def music(request):
-    form = CreateMusicForm()
+    form = CreateMusicModelForm()
 
     if request.method == "POST":
-        form = CreateMusicForm(request.POST)
+        form = CreateMusicModelForm(request.POST)
 
         if form.is_valid():
             Music.objects.create(**form.cleaned_data)
