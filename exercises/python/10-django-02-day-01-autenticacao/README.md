@@ -47,3 +47,32 @@ class AdminVendorSerializer(serializers.ModelSerializer):
 
 alterar o Viewset de fornecedores:
 
+# Token Authentication
+
+A autenticação por token requer um pouco mais de gerenciamento por parte do servidor - o gerenciamento das tokens - mas é mais segura - as credenciais só são enviadas para se obter uma token, e esta pode ser revogada com facilidade. 
+
+Segurança	
+Autenticação por Token	- Oferece melhor segurança, pois os tokens podem ter prazos curtos e ser revogados facilmente. Os tokens também podem ser emitidos com permissões específicas.
+
+Autenticação Básica - 	Menos seguro, pois as credenciais (nome de usuário/senha) são enviadas com cada requisição e podem ser interceptadas. As credenciais também são armazenadas no servidor, representando um risco potencial caso o servidor seja comprometido.
+
+Ausência de Estado
+Ambos -	Stateless, não requer armazenamento de sessão no servidor, o que reduz a carga no servidor.	servidor, o que reduz a carga no servidor.
+
+
+Complexidade de Implementação
+Autenticação por Token- Mais complexo de implementar em comparação com a Autenticação Básica, pois requer a geração e manipulação de tokens no lado do servidor, além de lidar com a expiração e revogação de tokens.
+Autenticação Básica - Mais fácil de implementar, pois envolve apenas a verificação das credenciais em cada requisição. Nenhuma geração ou manipulação de token é necessária.
+
+Primeiro, você precisará acrescentar um app novo à suas configurações e alterar a configuração padrão de autenticação:
+Altera arquivo marryme/settings.py:
+INSTALLED_APPS = ['rest_framework.authtoken',
+]
+
+alterar REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        ...
+    ]}
+
+    Agora, vamos primeiro criar uma rota para que uma pessoa possa enviar, via requisição, suas credenciais para obter uma token no arquivo marryme/urls
