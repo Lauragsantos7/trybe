@@ -7,16 +7,24 @@ type UserProviderProps = {
 }
 function UserProvider({ children }: UserProviderProps) {
     // children: tudo que fica encapsulado pelo provider.
-
+    
     const [userData, setUserData] = useState({
         name: '',
         email: '',
         city: '',
-        bio: ''
-
+        bio: '',
     })
 
-    const values = userData;
+    const handleChange = ({target}: React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement | HTMLSelectElement>) => {
+        setUserData({
+          ...userData,
+          [target.name]: [target.value]
+        })
+      }
+    
+
+    const values = {userData, handleChange};
+
     return(
         <UserContext.Provider value={values}>
             
