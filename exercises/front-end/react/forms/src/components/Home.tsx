@@ -1,4 +1,4 @@
-function FormResult() {
+function Home() {
   return (
     < div className="form-result">
       <h2>Dados da pessoa usuária</h2>
@@ -21,4 +21,4 @@ function FormResult() {
   );
 }
 
-export default FormResult;
+export default Home;

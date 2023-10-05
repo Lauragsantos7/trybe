@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 type UserContextType = {
-    nome: string,
+    name: string,
     email: string,
-    cidade: string,
+    city: string,
     bio: string
 }
 

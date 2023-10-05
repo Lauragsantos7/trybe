@@ -1,4 +1,17 @@
+
+import { useNavigate } from 'react-router-dom';
+
 function Form() {
+
+  
+  const navigate = useNavigate();
+  
+
+  function redirectToHome() {
+    navigate("/home")
+
+  }
+
   return (
     <>
       <form>
@@ -36,7 +49,7 @@ function Form() {
         </label>
         <br />
         <br />
-        <button>Enviar</button>
+        <button type="button" onClick={redirectToHome}>Enviar</button>
       </form>
     </>
   );
