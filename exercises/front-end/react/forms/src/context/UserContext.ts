@@ -1,11 +1,15 @@
 import { createContext } from 'react';
+
 type UserContextType = {
-    userData:{
-    name: string,
-    email: string,
-    city: string,
-    bio: string
-    }
+    userName: string,
+    userMail: string,
+    userCity: string,
+    userBio: string,
+    setUserName: React.Dispatch<React.SetStateAction<string>>,
+    setUserMail: React.Dispatch<React.SetStateAction<string>>,
+    setUserCity: React.Dispatch<React.SetStateAction<string>>,
+    setUserBio: React.Dispatch<React.SetStateAction<string>>,
+   
 }
 
 const UserContext = createContext({} as UserContextType);

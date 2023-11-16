@@ -1,7 +1,7 @@
 function Header(){
     return(
         <>
-        <h1> Formulário de Cadastro</h1>
+        <h1 className="header"> APPCustos</h1>
         </>
     )
 }

@@ -1,0 +1,27 @@
+body {
+
+  font-family: "Arial";
+  
+}
+
+.header {
+  margin-bottom:0;
+  background-color: rgb(153, 153, 235);
+  
+  padding: 50px;
+  text-align: center;
+ 
+}
+
+.form-result{
+  
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 0;
+  padding: 10px;
+}
+
+footer {
+  margin-top: 10px;
+  background-color:  rgba(153, 153, 235, 0.265);;
+}

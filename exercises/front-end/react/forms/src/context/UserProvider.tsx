@@ -1,5 +1,5 @@
 import UserContext from "./UserContext";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 // tipar o children - um nó de componentes filhos 
 type UserProviderProps = {
@@ -8,22 +8,23 @@ type UserProviderProps = {
 function UserProvider({ children }: UserProviderProps) {
     // children: tudo que fica encapsulado pelo provider.
     
-    const [userData, setUserData] = useState({
-        name: '',
-        email: '',
-        city: '',
-        bio: '',
-    })
-
-    const handleChange = ({target}: React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement | HTMLSelectElement>) => {
-        setUserData({
-          ...userData,
-          [target.name]: [target.value]
-        })
-      }
+    const [userName, setUserName] = useState('');
+    const [userMail, setUserMail] = useState('');
+    const [userCity, setUserCity] = useState('');
+    const [userBio, setUserBio] = useState('');
     
-
-    const values = {userData, handleChange};
+    const values = useMemo(() => ({
+        userName,
+        userMail,
+        userCity,
+        userBio,
+        setUserName,
+        setUserMail,
+        setUserCity,
+        setUserBio }),
+        [userName, userMail, userCity, userBio, setUserName, setUserMail, setUserCity, setUserBio]);
+        // useMemo - ficam salvos na memória os param para não precisar renderizar toda vez, apenas qdo forem atualizados.
+    
 
     return(
         <UserContext.Provider value={values}>
